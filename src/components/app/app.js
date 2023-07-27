@@ -2,11 +2,18 @@ import AppInfo from '../app-info/app-info';
 import SearchPanel from '../search-panel/search-panel';
 import AppFilter from '../app-filter/app-filter';
 import EmployeesList from '../employees-list/employees-list';
-import EmployeeAddForm from '../employees-add-form/employees-add-form';
+import EmployeesAddForm from '../employees-add-form/employees-add-form';
 
 import './app.css';
 
 function App() {
+
+  const data = [
+    { name: 'Тимур', salary: 800, increase: true },
+    { name: 'Максим', salary: 200, increase: true },
+    { name: 'Никита', salary: 1000, increase: false },
+  ];
+
   return (
     <div className="app">
       <AppInfo />
@@ -16,8 +23,8 @@ function App() {
         <AppFilter />
       </div>
 
-      <EmployeesList />
-      <EmployeeAddForm />
+      <EmployeesList  data={data} />
+      <EmployeesAddForm />
     </div>
   );
 }
